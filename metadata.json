@@ -1,0 +1,6 @@
+{
+  "name": "Mystery Room - Game Teka-Teki & Asah Otak",
+  "description": "Game teka-teki interaktif melatih logika, ketelitian, dan kreativitas dengan teka-teki gambar, angka, kata-kata, simbol, dan misteri.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
