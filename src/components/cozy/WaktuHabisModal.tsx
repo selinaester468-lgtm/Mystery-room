@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { RotateCcw, Home, Hourglass, Sparkles } from 'lucide-react';
 import { sound } from '../../services/audio';
+import { GAME_IMAGES } from '../../services/assets';
 
 interface WaktuHabisModalProps {
   isOpen: boolean;
@@ -45,7 +46,7 @@ export const WaktuHabisModal: React.FC<WaktuHabisModalProps> = ({
               🌀
             </div>
             <img
-              src="/src/assets/images/chibi_detective_crying_1793628630621.jpg"
+              src={GAME_IMAGES.chibiCrying}
               alt="Detective Crying"
               className="w-full h-full object-contain filter drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]"
             />

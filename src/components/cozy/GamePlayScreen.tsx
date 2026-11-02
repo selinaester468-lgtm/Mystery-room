@@ -22,6 +22,7 @@ import {
   X,
 } from 'lucide-react';
 import { WaktuHabisModal } from './WaktuHabisModal';
+import { GAME_IMAGES } from '../../services/assets';
 
 interface GamePlayScreenProps {
   room: RoomLevel;
@@ -185,7 +186,7 @@ export const GamePlayScreen: React.FC<GamePlayScreenProps> = ({
     <div className="relative w-full h-full flex flex-col justify-between p-3 sm:p-5 select-none bg-[#1d1733] overflow-hidden">
       {/* Background with cozy night room illustration */}
       <img
-        src="/src/assets/images/mystery_room_cozy_bg_1793627597939.jpg"
+        src={GAME_IMAGES.cozyBg}
         alt="Mystery Room Background"
         className="absolute inset-0 w-full h-full object-cover filter brightness-[0.4] pointer-events-none"
       />
@@ -306,7 +307,7 @@ export const GamePlayScreen: React.FC<GamePlayScreenProps> = ({
           <div className="shrink-0 p-1 bg-white rounded-lg shadow-md border border-[#d97706]/40 rotate-[-3deg]">
             <div className="w-12 h-12 sm:w-14 sm:h-14 rounded overflow-hidden bg-slate-900">
               <img
-                src="/src/assets/images/chibi_detective_happy_1793627597581.jpg"
+                src={GAME_IMAGES.chibiHappy}
                 alt="Detective Avatar"
                 className="w-full h-full object-cover"
               />

@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import confetti from 'canvas-confetti';
-import { Star, Sparkles, ArrowRight } from 'lucide-react';
+import { Star, Sparkles, ArrowRight, Download, Check } from 'lucide-react';
 import { sound } from '../../services/audio';
+import { GAME_IMAGES, downloadGameImage } from '../../services/assets';
 
 interface BenarModalProps {
   isOpen: boolean;
@@ -38,6 +39,15 @@ export const BenarModal: React.FC<BenarModalProps> = ({
     }
   }, [isOpen]);
 
+  const [isSaved, setIsSaved] = useState<boolean>(false);
+
+  const handleSaveImage = () => {
+    sound.playClick();
+    downloadGameImage(GAME_IMAGES.chibiHappy, `chibi-detective-soal-${questionNumber}.jpg`);
+    setIsSaved(true);
+    setTimeout(() => setIsSaved(false), 2500);
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -65,12 +75,36 @@ export const BenarModal: React.FC<BenarModalProps> = ({
         </div>
 
         {/* Happy Chibi Detective Character Sticker */}
-        <div className="w-28 h-28 sm:w-32 sm:h-32 mx-auto mb-2 flex items-center justify-center relative">
+        <div className="w-28 h-28 sm:w-32 sm:h-32 mx-auto mb-1 flex items-center justify-center relative group">
           <img
-            src="/src/assets/images/chibi_detective_happy_1793627597581.jpg"
+            src={GAME_IMAGES.chibiHappy}
             alt="Chibi Detective Celebrating"
-            className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.5)]"
+            className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.5)] cursor-pointer"
+            onClick={handleSaveImage}
+            title="Klik untuk Simpan Gambar Stiker"
           />
+        </div>
+
+        {/* Small Save Sticker Button */}
+        <div className="flex justify-center mb-2">
+          <button
+            type="button"
+            onClick={handleSaveImage}
+            className="px-2.5 py-1 rounded-full bg-[#1b1233]/70 hover:bg-[#2b1f4a] border border-amber-500/40 text-[10px] font-fredoka font-semibold text-amber-300 flex items-center gap-1 active:scale-95 transition-transform cursor-pointer"
+            title="Simpan gambar stiker detektif ke galeri/perangkat"
+          >
+            {isSaved ? (
+              <>
+                <Check className="w-3 h-3 text-emerald-400" />
+                <span className="text-emerald-300">Tersimpan!</span>
+              </>
+            ) : (
+              <>
+                <Download className="w-3 h-3" />
+                <span>Simpan Gambar</span>
+              </>
+            )}
+          </button>
         </div>
 
         {/* Explanation box */}

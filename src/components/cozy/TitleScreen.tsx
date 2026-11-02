@@ -1,6 +1,7 @@
 import React from 'react';
 import { Play, Grid, Trophy, Settings, Search, Sparkles, LogOut, Music, Music2 } from 'lucide-react';
 import { sound } from '../../services/audio';
+import { GAME_IMAGES } from '../../services/assets';
 
 interface TitleScreenProps {
   onStartGame: () => void;
@@ -25,7 +26,7 @@ export const TitleScreen: React.FC<TitleScreenProps> = ({
     <div className="relative w-full h-full flex flex-col items-center justify-between p-3 sm:p-6 overflow-hidden select-none">
       {/* Cozy night mystery study background */}
       <img
-        src="/src/assets/images/mystery_room_cozy_bg_1793627597939.jpg"
+        src={GAME_IMAGES.cozyBg}
         alt="Mystery Room Background"
         className="absolute inset-0 w-full h-full object-cover filter brightness-[0.72] contrast-105 pointer-events-none"
       />
@@ -89,7 +90,7 @@ export const TitleScreen: React.FC<TitleScreenProps> = ({
       <div className="relative z-10 my-auto py-1">
         <div className="w-20 h-20 sm:w-26 sm:h-26 rounded-full p-1 bg-gradient-to-b from-amber-400/40 to-purple-600/40 backdrop-blur-sm shadow-xl flex items-center justify-center">
           <img
-            src="/src/assets/images/chibi_detective_happy_1793627597581.jpg"
+            src={GAME_IMAGES.chibiHappy}
             alt="Chibi Detective"
             className="w-full h-full rounded-full object-cover shadow-inner"
           />

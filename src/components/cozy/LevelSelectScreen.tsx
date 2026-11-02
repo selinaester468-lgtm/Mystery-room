@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { RoomLevel, PlayerStats } from '../../types/game';
 import { sound } from '../../services/audio';
+import { GAME_IMAGES } from '../../services/assets';
 import { ArrowLeft, Home, Star, Lock, Moon, Sun, Clock, Key, Compass, Sparkles, Flame, BookOpen } from 'lucide-react';
 
 interface LevelSelectScreenProps {
@@ -64,7 +65,7 @@ export const LevelSelectScreen: React.FC<LevelSelectScreenProps> = ({
     <div className="relative w-full h-full flex flex-col justify-between p-3 sm:p-5 select-none bg-[#1d1733]">
       {/* Background with subtle stars */}
       <img
-        src="/src/assets/images/mystery_room_cozy_bg_1793627597939.jpg"
+        src={GAME_IMAGES.cozyBg}
         alt="Background"
         className="absolute inset-0 w-full h-full object-cover filter brightness-[0.4] pointer-events-none"
       />

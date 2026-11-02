@@ -1,6 +1,7 @@
 import React from 'react';
 import { PlayerStats } from '../../types/game';
 import { sound } from '../../services/audio';
+import { GAME_IMAGES } from '../../services/assets';
 import { LogIn, Star, Trophy, Moon, Heart } from 'lucide-react';
 
 interface ExitScreenProps {
@@ -18,7 +19,7 @@ export const ExitScreen: React.FC<ExitScreenProps> = ({
     <div className="relative w-full h-full min-h-[640px] flex flex-col items-center justify-between p-6 sm:p-8 select-none overflow-hidden bg-[#130f24]">
       {/* Background with cozy night room */}
       <img
-        src="/src/assets/images/mystery_room_cozy_bg_1793627597939.jpg"
+        src={GAME_IMAGES.cozyBg}
         alt="Mystery Room at Night"
         className="absolute inset-0 w-full h-full object-cover filter brightness-[0.45] contrast-105 pointer-events-none"
       />
@@ -35,7 +36,7 @@ export const ExitScreen: React.FC<ExitScreenProps> = ({
         {/* Chibi Detective Resting */}
         <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full p-1.5 bg-gradient-to-b from-amber-400/40 to-purple-600/40 backdrop-blur-sm shadow-2xl mb-4">
           <img
-            src="/src/assets/images/chibi_detective_happy_1793627597581.jpg"
+            src={GAME_IMAGES.chibiHappy}
             alt="Detective Rest"
             className="w-full h-full rounded-full object-cover"
           />

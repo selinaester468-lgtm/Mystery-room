@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { RoomLevel, PuzzleCategory, PlayerStats } from '../types/game';
 import { sound } from '../services/audio';
+import { GAME_IMAGES } from '../services/assets';
 import { Lock, Play, Star, Sparkles, Clock, Trophy, ChevronRight } from 'lucide-react';
 
 interface RoomSelectorProps {
@@ -95,7 +96,7 @@ export const RoomSelector: React.FC<RoomSelectorProps> = ({
           {/* Right Thematic Image Showcase */}
           <div className="lg:col-span-5 relative min-h-[260px] lg:min-h-full overflow-hidden">
             <img
-              src="/src/assets/images/mystery_room_study_1793626914329.jpg"
+              src={GAME_IMAGES.cozyBg}
               alt="Ruang Studi Misteri Klasik"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover object-center filter brightness-90 contrast-105"
@@ -106,7 +107,7 @@ export const RoomSelector: React.FC<RoomSelectorProps> = ({
             {/* Inset Seal Badge */}
             <div className="absolute bottom-4 right-4 bg-slate-950/80 border border-amber-600/40 rounded-xl p-3 backdrop-blur-md flex items-center gap-3 shadow-xl">
               <img
-                src="/src/assets/images/mystery_detective_seal_1793626914833.jpg"
+                src={GAME_IMAGES.chibiHappy}
                 alt="Segel Detektif"
                 className="w-10 h-10 rounded-full border border-amber-500/60 object-cover"
               />
